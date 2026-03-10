@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ## basic-mvp-pplineProj
 
 Basic DevSecOps MVP pipeline project in Node + TypeScript with Express and GitHub Actions.
@@ -51,3 +52,7 @@ docker run -p 3000:3000 -e JWT_SECRET="change-me" basic-mvp-pplineproj
 
 Then open `http://localhost:3000/health`.
 
+=======
+# basic-mvp-pplineProj
+A basic devops project utilizing CI/CD pipeline and automated scanning, checking and deployment using Github Actions, Docker and TypeScript.
+>>>>>>> 1a10b66e0d5c1e0b83a1798cc3bcb0aa11507484
