@@ -26,6 +26,9 @@ jobs:
           node-version: 20
           cache: npm
 
+
+      - name: npm install primary
+        run: npm install
       # Step 3: Installs project dependencies using npm ci, which is a clean install
       # method ensuring dependencies exactly match the package-lock.json.
       - name: Install dependencies
