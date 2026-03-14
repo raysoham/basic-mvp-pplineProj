@@ -1,7 +1,7 @@
 FROM node:20-alpine
 
 # Patch OS-level vulnerabilities (Fixes zlib CVE-2026-22184)
-RUN apk update && apk upgrade
+RUN apk update && apk upgrade && npm install -g npm@latest
 
 WORKDIR /app
 
