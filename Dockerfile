@@ -1,5 +1,8 @@
 FROM node:20-alpine
 
+# Patch OS-level vulnerabilities (Fixes zlib CVE-2026-22184)
+RUN apk update && apk upgrade
+
 WORKDIR /app
 
 COPY package*.json ./
