@@ -14,6 +14,8 @@ COPY src ./src
 
 RUN npm run build
 
+# Remove development dependencies to reduce image size and security surface area
+RUN npm prune --omit=dev
 ENV NODE_ENV=production
 EXPOSE 3000
 
