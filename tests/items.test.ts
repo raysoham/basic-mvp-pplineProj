@@ -6,7 +6,8 @@ describe('Items API', () => {
     const response = await request(app).get('/items');
 
     expect(response.status).toBe(200);
-    expect(response.body).toEqual([]);
+    expect(response.text).toContain('<h1>Here are the items</h1>');
+    expect(response.text).toContain('<p>No Items Added</p>');
   });
 
   it('creates a new item', async () => {

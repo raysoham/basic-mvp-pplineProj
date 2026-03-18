@@ -7,7 +7,9 @@ WORKDIR /app
 
 COPY package*.json ./
 
-RUN npm ci || npm install
+# RUN npm ci || npm install - package-lock.json out of sync should be caught locally.
+
+RUN npm ci
 
 COPY tsconfig.json ./
 COPY src ./src
@@ -15,8 +17,15 @@ COPY src ./src
 RUN npm run build
 
 # Remove development dependencies to reduce image size and security surface area
-RUN npm prune --omit=dev
+# Also clean npm cache to reduce image size before setting env to production
+RUN npm prune --omit=dev && npm cache clean --force
+
+# Set the environment to production
 ENV NODE_ENV=production
+
+# change user from root to node
+USER node
+
 EXPOSE 3000
 
 CMD ["node", "dist/index.js"]

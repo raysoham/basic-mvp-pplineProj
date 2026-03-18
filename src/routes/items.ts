@@ -10,8 +10,21 @@ let nextId = 1;
 
 const itemsRouter = Router();
 
+
 itemsRouter.get('/', (_req, res) => {
-  res.json(items);
+  let html = '<h1>Here are the items</h1>\n';
+  
+  if (items.length === 0) {
+    html += '<p>No Items Added</p>';
+  } else {
+    html += '<ul>\n';
+    items.forEach(item => {
+      html += `  <li>${item.name}</li>\n`;
+    });
+    html += '</ul>';
+  }
+  
+  res.send(html);
 });
 
 itemsRouter.post('/', (req, res) => {
