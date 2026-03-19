@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 ## basic-mvp-pplineProj
 
 Basic DevSecOps MVP pipeline project in Node + TypeScript with Express and GitHub Actions.
@@ -21,17 +20,13 @@ Basic DevSecOps MVP pipeline project in Node + TypeScript with Express and GitHu
    npm install
    ```
 
-2. **Set environment variables**
-   ```bash
-   export JWT_SECRET="change-me"
-   ```
 
-3. **Run in dev mode**
+2. **Run in dev mode**
    ```bash
    npm run dev
    ```
 
-4. **Endpoints**
+3. **Endpoints**
    - `GET /health` → `{ "status": "ok" }`
    - `GET /items` → returns an array of items
    - `POST /items` with `{ "name": "Test item" }` → creates an item
@@ -52,7 +47,12 @@ docker run -p 3000:3000 -e JWT_SECRET="change-me" basic-mvp-pplineproj
 
 Then open `http://localhost:3000/health`.
 
-=======
-# basic-mvp-pplineProj
-A basic devops project utilizing CI/CD pipeline and automated scanning, checking and deployment using Github Actions, Docker and TypeScript.
->>>>>>> 1a10b66e0d5c1e0b83a1798cc3bcb0aa11507484
+### Running from Docker image from GHCR
+
+```bash
+docker pull ghcr.io/raysoham/basic-mvp-pplineproj:latest # pull the latest image from GHCR
+docker run -p 3000:3000 ghcr.io/raysoham/basic-mvp-pplineproj:latest # run the container
+```
+
+Then open `http://localhost:3000/health`.
+

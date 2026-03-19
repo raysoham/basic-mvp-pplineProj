@@ -3,10 +3,10 @@ import jwt from 'jsonwebtoken';
 
 const authRouter = Router();
 
-const DEMO_USER = {
+const DEMO_USER = { // demo user - use db connector here for real users
   id: 1,
   username: 'demo',
-  password: 'password123'
+  password: 'password123' // use bcrypt for real users
 };
 
 authRouter.post('/login', (req, res) => {

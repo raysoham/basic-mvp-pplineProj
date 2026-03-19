@@ -40,10 +40,11 @@ jobs:
         run: npm run lint
 
       # Step 5: Executes the project's test suite with `npm test`,
-      # running all unit/integration tests configured in your repository.
+      # running all unit/integration tests configured via Vitest
       - name: Test
         run: npm test
-
+      # Step 6: Runs the npm audit process as defined in package.json scripts with `npm run audit`,
+      # which helps catch security vulnerabilities in dependencies.
       - name: npm audit (high and above)
         run: npm audit --audit-level=high
 

@@ -24,7 +24,7 @@ This project is intentionally small but focuses on demonstrating a DevSecOps-sty
 
 ### Secrets
 
-- The API uses `JWT_SECRET` to sign tokens.
+- The API uses `JWT_SECRET` to sign tokens. (In theory, there is no actual auth in this project just a mock)
 - In CI/CD and production, this should be stored in:
   - GitHub Actions **secrets**, or
   - A dedicated secrets manager (e.g. Vault) in more advanced setups.
